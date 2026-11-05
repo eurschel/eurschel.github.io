@@ -37,6 +37,7 @@ h3,h4{font-weight:500;letter-spacing:-.012em;line-height:1.25}
   background:rgba(242,242,242,.9);-webkit-backdrop-filter:saturate(1.4) blur(12px);backdrop-filter:saturate(1.4) blur(12px)}
 .brand{display:inline-flex;align-items:center;gap:10px;font-weight:600;font-size:15px;letter-spacing:-.01em;white-space:nowrap}
 .brand .mk{width:30px;height:30px;border-radius:50%;flex:none;background:#DADDE0 url(/portrait.jpg) 50% 16%/cover no-repeat}
+.brand .insec{white-space:nowrap}
 .nav .links{display:flex;gap:2px;flex:1;justify-content:center}
 .nav .links a{font-size:14px;color:var(--ink2);padding:6px 12px;border-radius:999px;transition:background .15s,color .15s}
 .nav .links a:hover{background:var(--actif);color:var(--ink)}
@@ -280,7 +281,7 @@ footer{margin-top:64px;border-top:1px solid var(--line2);padding:48px var(--g) 2
   .nav .links.open a{padding:12px 14px;border-radius:var(--r-petit)}
   .nav .cta{margin-left:auto}
   .burger{display:block}
-  .hero{grid-template-columns:1fr;min-height:0}
+  .hero{grid-template-columns:minmax(0,1fr);min-height:0}
   .hero .portrait{order:-1;height:440px}
   .hero>div:first-child{padding:30px 28px 32px}
   .part-inner{padding:30px 28px}
@@ -302,8 +303,10 @@ footer{margin-top:64px;border-top:1px solid var(--line2);padding:48px var(--g) 2
   :root{--g:16px}
   .nav{gap:10px}
   .nav .cta{padding:8px 12px}
+  .brand{white-space:normal;font-size:14px;line-height:1.15}
   .hero .portrait{height:380px}
   .hero>div:first-child{padding:24px 20px 26px}
+  .hero h1{font-size:34px}
   .part-inner,.contact-grid,.cta-inner,.block>.head:only-child,section.block:has(> .lead){padding:24px 20px !important}
   .block>.timeline{padding:2px 20px}
   .panel{padding:22px 20px}
@@ -313,4 +316,9 @@ footer{margin-top:64px;border-top:1px solid var(--line2);padding:48px var(--g) 2
   .faq-item .qn{display:none}
   .faq-item .a{padding:0 18px 18px}
   section.block,.cta-band{margin-top:40px}
+}
+/* ---------- petit téléphone : le bouton « Me contacter » de la barre cède la place au nom ---------- */
+@media (max-width:360px){
+  .nav .cta{display:none}
+  .hero h1{font-size:30px}
 }
